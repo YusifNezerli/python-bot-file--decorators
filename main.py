@@ -29,7 +29,7 @@ cwd = os.getcwd()
 
 
 
-if sys.argv[1] == "tarixide":
+if sys.argv[1] == "tarixi" and sys.argv[2] == "de":
     print("Bu gun:",today )
 elif sys.argv[1] == "il":
     print("Il:", today.year)
@@ -39,12 +39,12 @@ elif sys.argv[1] == "saat":
     print("saat:", time)
 elif sys.argv[1] == "gun":
     print("Week:",now.strftime("%A"))
-elif sys.argv[1] == "qovluqyarat":
+elif sys.argv[1] == "qovluq" and sys.argv[2] == "yarat":
     directory = input()
     location = 'D:\my-lesson\python'
     path = os.path.join(location, directory)
     os.mkdir(path)
-elif sys.argv[1] == "qovluqsil":
+elif sys.argv[1] == "qovluq" and sys.argv[2] == "sil":
     directory = input()
     location = 'D:\my-lesson\python'
     path = os.path.join(location, directory)
@@ -67,5 +67,28 @@ elif sys.argv[1] == "/":
     X = int(input('Ilk Reqem: '))
     Y = int(input('Ikinci Reqem: '))
     print(X, "/", Y,"=", X / Y)
+
+# update File yaratma
+
+elif sys.argv[1] == "file" and sys.argv[2] == "new":
+    f = open(input("file name:"),"x")
+elif sys.argv[1] == "file" and sys.argv[2] == "clear":
+    os.remove(input("file name:"))
+elif sys.argv[1] == "file" and sys.argv[2] == "write":
+    f = open(input("file name:"), "w")
+    f.write(input())
+elif sys.argv[1] == "file" and sys.argv[2] == "read":
+    f = open(input("file name:"), "r")
+    content = f.read()
+    print(content)
+    f.close()
+elif sys.argv[1] == "file" and sys.argv[2] == "add":
+    f = open(input("file name:"), "a")
+    f.write(input())
+elif sys.argv[1] == "file" and sys.argv[2] == "textsil":
+    f = open(input("file name:"), "r+")
+    f.seek(0)
+    f.truncate()
+
 
 
